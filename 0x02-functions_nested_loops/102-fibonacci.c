@@ -9,17 +9,17 @@
 int main(void)
 {
 	int x;
-	unsigned long fibonacci1 = 0, fibonacci2 = 1, sum;
+	unsigned long fibo1 = 0, fibo2 = 1, sum;
 
 	for (x = 0; x < 50; x++)
 	{
-		sum = fibonacci1 + fibonacci2;
+		sum = fibo1 + fibo2;
 		printf("%lu", sum);
 
-		fibonacci1 = fibonacci2;
-		fibonacci2 = sum;
+		fibo1 = fibo2;
+		fibo2 = sum;
 
-		if (count == 49)
+		if (x == 49)
 			printf("\n");
 		else
 			printf(", ");
