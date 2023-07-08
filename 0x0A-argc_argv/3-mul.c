@@ -7,43 +7,44 @@
  *
  * Return: the int converted from the string
  */
+
 int _atoi(char *s)
 {
-	int a, b, d, c, e, f;
+	int i, d, n, z, f, h;
 
-	a = 0;
-	b = 0;
+	i = 0;
 	d = 0;
-	c = 0;
-	e = 0;
+	n = 0;
+	z = 0;
 	f = 0;
+	h = 0;
 
-	while (s[c] != '\0')
-		c++;
+	while (s[z] != '\0')
+		z++;
 
-	while (a < c && e == 0)
+	while (i < z && f == 0)
 	{
-		if (s[a] == '-')
-			++b;
+		if (s[i] == '-')
+			++d;
 
-		if (s[a] >= '0' && s[a] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			f = s[a] - '0';
-			if (b % 2)
-				f = -f;
-			d = d * 10 + f;
-			e = 1;
-			if (s[a + 1] < '0' || s[a + 1] > '9')
+			h = s[i] - '0';
+			if (d % 2)
+				h = -h;
+			n = n * 10 + h;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
 				break;
-			e = 0;
+			f = 0;
 		}
-		a++;
+		i++;
 	}
 
-	if (e == 0)
+	if (f == 0)
 		return (0);
 
-	return (d);
+	return (n);
 }
 
 /**
@@ -53,21 +54,22 @@ int _atoi(char *s)
  *
  * Return: 0 (Success), 1 (Error)
  */
+
 int main(int argc, char *argv[])
 {
-	int result, x, y;
+	int result, n1, n2;
 
 	if (argc < 3 || argc > 3)
 	{
-		printf("Error\d");
+		printf("Error\n");
 		return (1);
 	}
 
-	x = _atoi(argv[1]);
-	y = _atoi(argv[2]);
-	result = x * y;
+	n1 = _atoi(argv[1]);
+	n2 = _atoi(argv[2]);
+	result = n1 * n2;
 
-	printf("%b\d", result);
+	printf("%d\n", result);
 
 	return (0);
 }
