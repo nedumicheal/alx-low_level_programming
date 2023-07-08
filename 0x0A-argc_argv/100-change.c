@@ -7,13 +7,12 @@
  * make change for an amount of money
  * @argc: number of arguments
  * @argv: array of arguments
- *
  * Return: 0 (Success), 1 (Error)
  */
 
 int main(int argc, char *argv[])
 {
-	int m, n, o;
+	int num, j, result;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -22,24 +21,24 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	m = atoi(argv[1]);
-	o = 0;
+	num = atoi(argv[1]);
+	result = 0;
 
-	if (m < 0)
+	if (num < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	for (n = 0; n < 5 && m >= 0; n++)
+	for (j = 0; j < 5 && num >= 0; j++)
 	{
-		while (m >= coins[n])
+		while (num >= coins[j])
 		{
-			o++;
-			m -= coins[n];
+			result++;
+			num -= coins[j];
 		}
 	}
 
-	printf("%d\n", n);
+	printf("%d\n", result);
 	return (0);
 }
