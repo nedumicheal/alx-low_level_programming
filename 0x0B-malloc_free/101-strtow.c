@@ -4,39 +4,41 @@
 /**
  * count_word - helper function to count the number of words in a string
  * @s: string to evaluate
- *  Return: number of words
+ *
+ * Return: number of words
  */
+ 
 int count_word(char *s)
 {
-		int reto, d, f;
+	int reto, d, e;
 
+	reto = 0;
+	e = 0;
+
+	for (d = 0; s[d] != '\0'; d++)
+	{
+		if (s[d] == ' ')
 			reto = 0;
-				f = 0;
+		else if (reto == 0)
+		{
+			reto = 1;
+			e++;
+		}
+	}
 
-					for (d = 0; s[d] != '\0'; d++)
-							{
-										if (s[d] == ' ')
-														reto = 0;
-												else if (reto == 0)
-															{
-																			reto = 1;
-																						f++;
-																								}
-													}
-
-						return (f);
+	return (e);
 }
 
 /**
  * **strtow - splits a string into words
  * @str: string to split
- *
  * Return: pointer to an array of strings (Success)
  * or NULL (Error)
  */
+
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
+	char **pattern, *tmp;
 	int i, k = 0, len = 0, words, d = 0, start, end;
 
 	while (*(str + len))
@@ -45,8 +47,8 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	pattern = (char **) malloc(sizeof(char *) * (words + 1));
+	if (pattern == NULL)
 		return (NULL);
 
 	for (i = 0; i <= len; i++)
@@ -62,7 +64,7 @@ char **strtow(char *str)
 				while (start < end)
 					*tmp++ = str[start++];
 				*tmp = '\0';
-				matrix[k] = tmp - d;
+				pattern[k] = tmp - d;
 				k++;
 				d = 0;
 			}
@@ -71,7 +73,7 @@ char **strtow(char *str)
 			start = i;
 	}
 
-	matrix[k] = NULL;
+	pattern[k] = NULL;
 
-	return (matrix);
+	return (pattern);
 }
