@@ -8,6 +8,7 @@
  * @h: the linked list of type listint_t
  * Return: number of all nodes
  * format: let the code decide
+ * @next: points to next node
  */
 
 size_t print_listint(const listint_t *h)
