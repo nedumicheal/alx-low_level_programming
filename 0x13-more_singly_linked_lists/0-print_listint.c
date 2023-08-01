@@ -3,8 +3,8 @@
 /**
  * print_listint - prints all the elements of list
  * @h: the linked list of type listint_t
- * Return: number of all nodes
  * @next: points to the next node
+ * Return: number of all nodes
  */
 
 size_t print_listint(const listint_t *h)
