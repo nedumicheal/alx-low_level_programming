@@ -11,11 +11,12 @@ void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
-void print_abi(unsigned char *e_ident);
 void print_osabi(unsigned char *e_ident);
+void print_abi(unsigned char *e_ident);
 void print_type(unsigned int e_type, unsigned char *e_ident);
 void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
+int main(int __attribute__((__unused__)) argc, char *argv[]);
 
 /**
  * check_elf - Checks if file is ELF file.
@@ -267,14 +268,11 @@ void close_elf(int elf)
 }
 
 /**
- * main - Displays the information contained in the
- * ELF header.
+ * main - Displays the information contained in the ELF header.
  * @argc: number of arguments supplied to program.
  * @argv: array of pointers to the arguments.
  * Return: 0 if successful.
- * Description: If the file is not an ELF File,
- * or
- * the function fails - 98.
+ * Description: If the file is not an ELF File,or the function fails - 98.
  */
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
